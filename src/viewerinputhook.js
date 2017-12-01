@@ -1,4 +1,4 @@
-﻿/* 
+/* 
  * Copyright (c) 2013-2014 Mark Salsbery
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -33,8 +33,8 @@
  *
  */
 
-
-(function(OSD, $, undefined) {
+(function($, undefined) {
+    var OSD = require("openseadragon");
 
     if (!OSD.version || OSD.version.major < 1) {
         throw new Error('OpenSeadragonViewerInputHook requires OpenSeadragon version 1.0.0+');
@@ -116,10 +116,9 @@
      */
     /* jshint ignore:start */
     $.ViewerInputHook.version = {
-        versionStr: '<%= viewerinputhookVersion.versionStr %>',
-        major: <%= viewerinputhookVersion.major %>,
-        minor: <%= viewerinputhookVersion.minor %>,
-        revision: <%= viewerinputhookVersion.revision %>
+        versionStr: '1.1.0',
+        major: '1',
+        minor: '1'
     };
     /* jshint ignore:end */
 
@@ -132,4 +131,4 @@
         return event.stopBubbling ? false : ret;
     };
 
-}(OpenSeadragon, window.OpenSeadragonImaging = window.OpenSeadragonImaging || {}));
+}(window.OpenSeadragonImaging = window.OpenSeadragonImaging || {}));
